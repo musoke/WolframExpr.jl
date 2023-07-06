@@ -2,7 +2,7 @@
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "eccc329ce6d15c2bd7596611f088b8680cbe251b"
+project_hash = "1e1a5df4dfcc6eb8c7fcb656dcf53b1cf7868a21"
 
 [[deps.ANSIColoredPrinters]]
 git-tree-sha1 = "574baf8110975760d391c710b6341da1afa48d8c"
@@ -106,6 +106,12 @@ uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 [[deps.Markdown]]
 deps = ["Base64"]
 uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
+
+[[deps.MathLink]]
+deps = ["Libdl", "Printf"]
+git-tree-sha1 = "ca72ddd50c865bf858972ecb819046a9115edc95"
+uuid = "18c93696-a329-5786-9845-8443133fa0b4"
+version = "0.5.1"
 
 [[deps.MbedTLS_jll]]
 deps = ["Artifacts", "Libdl"]
