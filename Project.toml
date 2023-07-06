@@ -3,5 +3,11 @@ uuid = "3b1d5462-01b8-4f27-aafe-73656d3cb0b1"
 authors = ["Nathan Musoke <nathan.musoke@gmail.com> and contributors"]
 version = "1.0.0-DEV"
 
+[deps]
+MathLink = "18c93696-a329-5786-9845-8443133fa0b4"
+SyntaxTree = "a4af3ec5-f8ac-5fed-a759-c2e80b4d74cb"
+
 [compat]
+MathLink = "0.5.1"
+SyntaxTree = "1.0.1"
 julia = "1.8"
