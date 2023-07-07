@@ -5,9 +5,12 @@
 [![Build Status](https://github.com/musoke/WolframExpr.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/musoke/WolframExpr.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/musoke/WolframExpr.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/musoke/WolframExpr.jl)
 
-Conversion of [Wolfram Language](https://www.wolfram.com/language/) expressions to Julia expressions.
+Conversion of [Wolfram Language](https://www.wolfram.com/language/) expressions to Julia functions.
 
 __Incomplete work in progress.__
+
+
+_Mathematica, Wolfram, MathLink are all trademarks of Wolfram Research._
 
 ## Citing
 
