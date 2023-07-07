@@ -13,17 +13,20 @@ export wexpr_to_expr
 
 Convert a string to a Julia function with arguments in `symbols`.
 
-```jldoctes
+The resulting method has signature matching `symbols`.
 
+# Examples
+
+```jldoctest
 julia> using WolframExpr
 
-julia> f = WolframExpr.string_to_function("x+y", [:x, :y])
+julia> f = string_to_function("x+y", [:x, :y]);
 
 julia> f(1, 2)
 3
 
 julia> f(1.2, 2)
-2.3
+3.2
 ```
 """
 function string_to_function(string, symbols)
@@ -37,13 +40,13 @@ end
 
 Convert a string to a Julia `Expr`.
 
-```jldoctes
+# Examples
 
+```jldoctest
 julia> using WolframExpr
 
-julia> WolframExpr.string_to_wexpr("Sin(1)")
-
-:(Sin(1))
+julia> string_to_expr("(x+y)/2")
+:((x + y) * 2 ^ -1)
 ```
 """
 function string_to_expr(string)
@@ -53,16 +56,16 @@ end
 """
     string_to_wexpr(wolfram)
 
-Convert a string to a MathLink.WExpr.
+Convert a string to a `MathLink.WExpr`.
 
 Very shallow wrapper around `MathLink`'s parsing.
 
-```jldoctes
+# Examples
 
+```jldoctest
 julia> using WolframExpr
 
 julia> string_to_wexpr("Sin[1]")
-
 W`Sin`(1)
 ```
 """
@@ -75,11 +78,13 @@ end
 
 Convert a Wolfram expression from a `MathLink.WExpr` to a Julia expression.
 
-```jldoctes
+# Examples
 
+```jldoctest
 julia> using MathLink, WolframExpr
 
-julia> WolframExpr.wexpr_to_expr(W`1. + 1`)
+julia> wexpr_to_expr(W`1. + 1`)
+:(1.0 + 1)
 ```
 """
 function wexpr_to_expr(symb::MathLink.WSymbol)
