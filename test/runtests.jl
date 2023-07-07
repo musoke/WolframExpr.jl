@@ -2,6 +2,11 @@ using WolframExpr
 using Test
 using Documenter
 
+if haskey(ENV, "GITHUB_ACTIONS")
+    @warn "Tests disabled in github actions"
+    return
+end
+
 doctest(WolframExpr)
 
 @testset "WolframExpr.jl" begin

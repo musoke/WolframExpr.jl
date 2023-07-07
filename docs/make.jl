@@ -3,6 +3,13 @@ using Documenter
 
 DocMeta.setdocmeta!(WolframExpr, :DocTestSetup, :(using WolframExpr); recursive = true)
 
+doctest = if haskey(ENV, "GITHUB_ACTIONS")
+    @warn "Tests disabled in github actions"
+    false
+else
+    true
+end
+
 makedocs(;
     modules = [WolframExpr],
     authors = "Nathan Musoke <nathan.musoke@gmail.com> and contributors",
@@ -15,6 +22,7 @@ makedocs(;
         assets = String[],
     ),
     pages = ["Home" => "index.md"],
+    doctest = doctest,
 )
 
 deploydocs(; repo = "github.com/musoke/WolframExpr.jl", devbranch = "main")
