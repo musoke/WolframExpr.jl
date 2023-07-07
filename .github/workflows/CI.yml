@@ -1,4 +1,10 @@
 name: CI
+
+# github action doesn't have MathLink installed
+# https://github.com/JuliaInterop/MathLink.jl#installation-troubleshoot
+env:
+  JULIA_MATHKERNEL: ""
+
 on:
   push:
     branches:
