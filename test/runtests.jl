@@ -1,6 +1,11 @@
 using WolframExpr
 using Test
 using Documenter
+using MathLink
+
+# Prevent IOCapture from hanging within doctests
+# See https://github.com/JuliaDocs/IOCapture.jl/issues/17
+W`Sin`
 
 doctest(WolframExpr)
 

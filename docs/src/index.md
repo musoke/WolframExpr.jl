@@ -12,7 +12,7 @@ _Mathematica, Wolfram, MathLink are all trademarks of Wolfram Research._
 The primary function is [`string_to_function`](@ref), which converts a string containing a Wolfram Language expression to a Julia function.
 
 For example,
-```@rep
+```@repl
 using WolframExpr
 
 f = string_to_function("A[x,y]+y", [:A, :x, :y]);

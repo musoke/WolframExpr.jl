@@ -1,5 +1,10 @@
 using WolframExpr
 using Documenter
+using MathLink
+
+# Prevent IOCapture from hanging within doctests
+# See https://github.com/JuliaDocs/IOCapture.jl/issues/17
+W`Sin`
 
 DocMeta.setdocmeta!(WolframExpr, :DocTestSetup, :(using WolframExpr); recursive = true)
 
