@@ -1,3 +1,7 @@
+# based on
+# - https://github.com/JuliaInterop/MathLink.jl/blame/4f6dbe568a7ac2dfda933033ea5196bef508c695/.github/workflows/CI.yml
+# - https://github.com/WolframResearch/WL-FunctionCompile-CI-Template/blob/d130d1fef06f0597a2e81987140fd21eedb4dd3f/.github/workflows/compile-wl-functions.yml
+
 name: CI
 on:
   push:
@@ -11,20 +15,23 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 jobs:
-  test:
+  Linux:
     name: Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }} - ${{ github.event_name }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         version:
-          - '1.8'
           - '1.9'
-          - 'nightly'
         os:
           - ubuntu-latest
         arch:
           - x64
+    container:
+      image: wolframresearch/wolframengine:latest
+      options: --user root
+    env:
+      WOLFRAMINIT:  -entitlement ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }} -pwfile !cloudlm.wolfram.com
     steps:
       - uses: actions/checkout@v3
       - uses: julia-actions/setup-julia@v1
@@ -41,6 +48,11 @@ jobs:
   docs:
     name: Documentation
     runs-on: ubuntu-latest
+    container:
+      image: wolframresearch/wolframengine:latest
+      options: --user root
+    env:
+      WOLFRAMINIT:  -entitlement ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }} -pwfile !cloudlm.wolfram.com
     permissions:
       contents: write
       statuses: write
