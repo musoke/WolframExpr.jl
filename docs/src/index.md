@@ -30,7 +30,7 @@ For best results using expressions from Mathematica, pass your expression throug
 WolframExpr depends on [MathLink.jl](https://github.com/JuliaInterop/MathLink.jl), which requires an installation of either [Mathematica](http://www.wolfram.com/mathematica/) or the free [Wolfram Engine](https://www.wolfram.com/engine/).
 If those exist, the usual Julia installation methods will install WolframExpr:
 ```repl
-] add WolframExpr
+] add https://github.com/musoke/WolframExpr.jl
 ```
 
 If this fails, the problem is likely [MathLink](https://github.com/JuliaInterop/MathLink.jl).
