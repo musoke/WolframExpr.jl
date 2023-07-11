@@ -3,12 +3,11 @@ CurrentModule = WolframExpr
 ```
 
 # WolframExpr
+__Incomplete work in progress.__
 
 [WolframExpr](https://github.com/musoke/WolframExpr.jl) is a package for translating [Wolfram Language](https://www.wolfram.com/language/) expressions to [Julia](https://julialang.org/) functions.
 
 _Mathematica, Wolfram, MathLink are all trademarks of Wolfram Research._
-
-__Incomplete work in progress.__
 
 The primary function is [`string_to_function`](@ref), which converts a string containing a Wolfram Language to a Julia function.
 
@@ -29,17 +28,16 @@ For best results using expressions from Mathematica, pass your expression throug
 ## Installation
 
 WolframExpr depends on [MathLink.jl](https://github.com/JuliaInterop/MathLink.jl), which requires an installation of either [Mathematica](http://www.wolfram.com/mathematica/) or the free [Wolfram Engine](https://www.wolfram.com/engine/).
-See MathLink's install directions for installation and troubleshooting directions.
-
-If you succeed in installing MathLink, the usual Julia installation methods will install WolframExpr:
-
+If those exist, the usual Julia installation methods will install WolframExpr:
 ```repl
 ] add WolframExpr
 ```
 
+If this fails, the problem is likely [MathLink](https://github.com/JuliaInterop/MathLink.jl).
+See its documentation for installation and troubleshooting directions.
 
-```@index
-```
+
+## API
 
 ```@autodocs
 Modules = [WolframExpr]
