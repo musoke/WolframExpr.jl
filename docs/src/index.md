@@ -3,13 +3,13 @@ CurrentModule = WolframExpr
 ```
 
 # WolframExpr
-__Incomplete work in progress.__
+__Incomplete work in progress.__ [Open an issue](https://github.com/musoke/WolframExpr.jl/issues/new/choose) if you find bugs or have requests.
 
 [WolframExpr](https://github.com/musoke/WolframExpr.jl) is a package for translating [Wolfram Language](https://www.wolfram.com/language/) expressions to [Julia](https://julialang.org/) functions.
 
 _Mathematica, Wolfram, MathLink are all trademarks of Wolfram Research._
 
-The primary function is [`string_to_function`](@ref), which converts a string containing a Wolfram Language to a Julia function.
+The primary function is [`string_to_function`](@ref), which converts a string containing a Wolfram Language expression to a Julia function.
 
 For example,
 ```@rep
