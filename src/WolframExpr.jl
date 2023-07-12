@@ -70,7 +70,7 @@ W"Sin"(1)
 ```
 """
 function string_to_wexpr(string)
-    W`$string`
+    MathLink.W`$string`
 end
 
 """
