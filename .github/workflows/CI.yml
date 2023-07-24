@@ -81,6 +81,5 @@ jobs:
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
             using WolframExpr
-            using MathLink; W`Sin`;
             DocMeta.setdocmeta!(WolframExpr, :DocTestSetup, :(using WolframExpr); recursive=true)
             doctest(WolframExpr)'

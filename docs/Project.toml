@@ -1,6 +1,5 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-MathLink = "18c93696-a329-5786-9845-8443133fa0b4"
 WolframExpr = "3b1d5462-01b8-4f27-aafe-73656d3cb0b1"
 
 [compat]
