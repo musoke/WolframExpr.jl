@@ -7,9 +7,15 @@ using WolframExpr
 
 @test string_to_expr("1.+1") == :(1.0 + 1)
 
+@test string_to_expr("I") == :im
+@test string_to_expr("1 + 2 I") == :(1 + 2im)
+@test eval(string_to_expr("Complex[1, 2]")) == eval(:(1 + 2im))
 
 f = string_to_function("1.+1", [])
 @test f() === 2.0
+
+f = string_to_function("1.+2I", [])
+@test f() === 1.0 + 2.0im
 
 f = WolframExpr.string_to_function("x+y", [:x, :y])
 @test f(1.2, 2) === 3.2
