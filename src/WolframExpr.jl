@@ -88,7 +88,11 @@ julia> wexpr_to_expr(W`1. + 1`)
 ```
 """
 function wexpr_to_expr(symb::MathLink.WSymbol)
-    Symbol(symb.name)
+    if symb.name == "I"
+        return :im
+    else
+        Symbol(symb.name)
+    end
 end
 
 function wexpr_to_expr(num::Number)
@@ -139,6 +143,9 @@ function wexpr_to_expr(expr::MathLink.WExpr)::Expr
         return Expr(:call, :^, map(wexpr_to_expr, expr.args)...)
     elseif expr.head.name == "Rational"
         return Expr(:call, ://, map(wexpr_to_expr, expr.args)...)
+    elseif expr.head.name == "Complex"
+        @assert length(expr.args) == 2
+        return Expr(:call, :Complex, map(wexpr_to_expr, expr.args)...)
     else
         return Expr(:call, Symbol(expr.head.name), map(wexpr_to_expr, expr.args)...)
     end
