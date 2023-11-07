@@ -20,5 +20,8 @@ f = string_to_function("1.+2I", [])
 f = WolframExpr.string_to_function("x+y", [:x, :y])
 @test f(1.2, 2) === 3.2
 
+f = WolframExpr.string_to_function("Sqrt[x]", [:x])
+@test f(2) === sqrt(2)
+
 string_derivative = raw"""Derivative[0,1][f][x,y]"""
 @test string_to_expr(string_derivative) == :(Derivative_0_1_f(x, y))

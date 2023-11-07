@@ -143,6 +143,8 @@ function wexpr_to_expr(expr::MathLink.WExpr)::Expr
         return Expr(:call, :^, map(wexpr_to_expr, expr.args)...)
     elseif expr.head.name == "Rational"
         return Expr(:call, ://, map(wexpr_to_expr, expr.args)...)
+    elseif expr.head.name == "Sqrt"
+        return Expr(:call, :sqrt, map(wexpr_to_expr, expr.args)...)
     elseif expr.head.name == "Complex"
         @assert length(expr.args) == 2
         return Expr(:call, :Complex, map(wexpr_to_expr, expr.args)...)
