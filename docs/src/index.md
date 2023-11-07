@@ -3,7 +3,8 @@ CurrentModule = WolframExpr
 ```
 
 # WolframExpr
-__Incomplete work in progress.__ [Open an issue](https://github.com/musoke/WolframExpr.jl/issues/new/choose) if you find bugs or have requests.
+__Incomplete work in progress__ building on work by [github.com/eswagel](https://github.com/AmplitudeGravity/usingMathLink/blob/06c6ddf6c8c133a832a25156d61d8c356e232e96/useMathLink.ipynb).
+Open an [issue](https://github.com/musoke/WolframExpr.jl/issues/new/choose) or [pull request](https://github.com/musoke/WolframExpr.jl/compare) if you find bugs or have requests.
 
 [WolframExpr](https://github.com/musoke/WolframExpr.jl) is a package for translating [Wolfram Language](https://www.wolfram.com/language/) expressions to [Julia](https://julialang.org/) functions.
 
@@ -33,7 +34,7 @@ If those exist, the usual Julia installation methods will install WolframExpr:
 ] add https://github.com/musoke/WolframExpr.jl
 ```
 
-If this fails, the problem is likely [MathLink](https://github.com/JuliaInterop/MathLink.jl).
+If this fails, the problem is likely with [MathLink.jl](https://github.com/JuliaInterop/MathLink.jl).
 See its documentation for installation and troubleshooting directions.
 
 
