@@ -25,6 +25,8 @@ f(A, 1, 2)
 
 For best results using expressions from Mathematica, pass your expression through [FullForm](https://reference.wolfram.com/language/ref/FullForm.html) to remove special syntax.
 
+[SymbolicsMathLink.jl](https://github.com/eswagel/SymbolicsMathLink.jl) has related functionality.
+
 
 ## Installation
 
