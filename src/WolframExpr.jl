@@ -66,11 +66,11 @@ Very shallow wrapper around `MathLink`'s parsing.
 julia> using WolframExpr
 
 julia> string_to_wexpr("Sin[1]")
-W"Sin"(1)
+W`Sin[1]`
 ```
 """
-function string_to_wexpr(string)
-    MathLink.W`$string`
+function string_to_wexpr(string)::Union{MathLink.WSymbol,MathLink.WExpr}
+    MathLink.parseexpr(string)
 end
 
 """
@@ -84,7 +84,7 @@ Convert a Wolfram expression from a `MathLink.WExpr` to a Julia expression.
 julia> using MathLink, WolframExpr
 
 julia> wexpr_to_expr(W`1. + 1`)
-:(1.0 + 1)
+:(1.0 + 1.0)
 ```
 """
 function wexpr_to_expr(symb::MathLink.WSymbol)
