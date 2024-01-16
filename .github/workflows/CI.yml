@@ -37,6 +37,10 @@ jobs:
     # Limit runtime to preserve Wolfram Service Credits
     timeout-minutes: 10
     steps:
+      - name: Install curl
+        # julia-actions/cache depends on dcarbone/install-jq-action, which requires curl
+        run: |
+          apt install curl
       - uses: actions/checkout@v3
       - uses: julia-actions/setup-julia@v1
         with:
@@ -64,6 +68,10 @@ jobs:
       contents: write
       statuses: write
     steps:
+      - name: Install curl
+        # julia-actions/cache depends on dcarbone/install-jq-action, which requires curl
+        run: |
+          apt install curl
       - uses: actions/checkout@v3
       - uses: julia-actions/setup-julia@v1
         with:
