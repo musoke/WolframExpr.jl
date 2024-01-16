@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - main
+      - debug-*
     tags: ['*']
   pull_request:
 concurrency:
@@ -41,7 +42,7 @@ jobs:
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
-      - uses: julia-actions/cache@v1.4.1
+      - uses: musoke/julia-actions-cache@jq-install
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
       - uses: julia-actions/julia-processcoverage@v1
