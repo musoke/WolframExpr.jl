@@ -36,7 +36,7 @@ jobs:
     # Limit runtime to preserve Wolfram Service Credits
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.version }}
@@ -63,7 +63,7 @@ jobs:
       contents: write
       statuses: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: julia-actions/setup-julia@v1
         with:
           version: '1'
