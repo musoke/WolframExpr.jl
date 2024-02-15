@@ -1,7 +1,7 @@
 name = "WolframExpr"
 uuid = "3b1d5462-01b8-4f27-aafe-73656d3cb0b1"
 authors = ["Nathan Musoke <nathan.musoke@gmail.com> and contributors"]
-version = "1.0.0"
+version = "1.0.1"
 
 [deps]
 MathLink = "18c93696-a329-5786-9845-8443133fa0b4"
