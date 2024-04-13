@@ -41,6 +41,11 @@ jobs:
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
+      - name: Install git
+        run: |
+          apt-get update
+          apt-get install -y git
+          which git
       - uses: julia-actions/cache@v1.4.1
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
