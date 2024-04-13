@@ -6,7 +6,8 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - 'main'
+      - 'ci/*'
     tags: ['*']
   pull_request:
 concurrency:
