@@ -41,7 +41,7 @@ jobs:
         # julia-actions/cache depends on dcarbone/install-jq-action, which requires curl
         run: apt-get update && apt-get install -y curl
       - uses: actions/checkout@v3
-      - uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@v2
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
@@ -78,7 +78,7 @@ jobs:
         # julia-actions/cache depends on dcarbone/install-jq-action, which requires curl
         run: apt-get update && apt-get install -y curl
       - uses: actions/checkout@v3
-      - uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@v2
         with:
           version: '1'
       - uses: julia-actions/cache@v2
